@@ -41,14 +41,13 @@ insmod $module_path/mmi_sys_temp.ko
 insmod $module_path/moto_f_usbnet.ko
 insmod $module_path/qpnp-power-on-mmi.ko
 insmod $module_path/qpnp-smbcharger-mmi.ko
-insmod $module_path/tas2562.ko
+insmod $module_path/tps61280.ko
 insmod $module_path/focaltech_0flash_mmi.ko
-insmod $module_path/nova_0flash_mmi.ko
 
 cd $firmware_path
 touch_product_string=$(ls $touch_class_path)
-insmod $module_path/aw8624.ko
-firmware_file="focaltech-ft8756-0d-01-sofiar.bin"
+insmod $module_path/aw8695.ko
+firmware_file="focaltech-tianma-ft8756-0b-01-sofia.bin"
 
 touch_path=/sys$(cat $touch_class_path/$touch_product_string/path | awk '{print $1}')
 wait_for_poweron
